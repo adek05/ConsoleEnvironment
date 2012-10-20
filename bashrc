@@ -32,7 +32,7 @@ alias grep='grep -n --color=auto'
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS=' -R '
 # Dir colors - setting are in /etc/dircolors
-eval `dircolors -b`
+eval `dircolors -b ~/.console_env/dircolors_config`
 # Color manpages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
