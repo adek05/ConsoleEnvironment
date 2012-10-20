@@ -1,0 +1,26 @@
+[user]
+	name = Adrian Zgorzałek
+	email = a.zgorzalek@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = vim
+        pager = less -FS
+[diff]
+	tool = vimdiff
+[alias]
+	st = status
+	ci = commit -p -m
+	br = branch
+	co = checkout
+	cob = checkout -b
+	df = diff
+	lg = log -p
+	d = difftool
+[difftool]
+	prompt = false
+[merge]
+	tool = threesome
+[mergetool "threesome"]
+	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+	trustExitCode = true
