@@ -50,7 +50,13 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
 
-export PS1='\e[1;32m[\u@\e[1;34m\h \e[1;34m\W]\e[1;35m$(parse_git_branch)\e[0m $ '
+# export PS1='\e[1;32m[\u@\e[1;34m\h \e[1;34m\W]\e[1;35m$(parse_git_branch)\e[0m $ '
+function _update_ps1()
+{
+	export PS1="$(~/.console_env/powerline-bash.py $?)"
+}
+
+export PROMPT_COMMAND="_update_ps1"
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/adek/.local/bin
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/adek/.local/bin:/home/adek/.local/bin
