@@ -78,5 +78,10 @@ export CCACHE_PATH="/usr/bin"
 # Mim account
 export MIM=az306487@students.mimuw.edu.pl
 
+# More aliases
+alias gcc='gcc -Wextra -Wall'
+alias g++='g++ -Wextra -Wall'
+alias g++11='g++ -std=c++11 -Wextra -Wall'
+
 # Django stuff
 # export DJANGO_SETTINGS_MODULE=mysite.settings
