@@ -29,6 +29,7 @@ alias ls='ls --color=auto'
 alias pacman='pacman-color'
 alias grep='grep -n --color=auto'
 # Less coloring
+export LESSCOLOR="yes"
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS=' -R '
 # Dir colors - setting are in /etc/dircolors
