@@ -43,15 +43,16 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-# Lovely prompt when in git repository
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
-}
-
+# Lovely prompt when in git repository - No more used when powerline-bash is on
+# function parse_git_dirty {
+#   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+# }
+# function parse_git_branch {
+#   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
+# }
+#
 # export PS1='\e[1;32m[\u@\e[1;34m\h \e[1;34m\W]\e[1;35m$(parse_git_branch)\e[0m $ '
+
 function _update_ps1()
 {
 	export PS1="$(~/.console_env/powerline-bash.py $?)"
